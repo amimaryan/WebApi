@@ -4438,6 +4438,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "translatorapp.DomainLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/translatorapp.DomainLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/translatorapp.DomainLayer.dll": {}
+        }
       }
     }
   },
@@ -12063,13 +12073,19 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "translatorapp.DomainLayer/1.0.0": {
+      "type": "project",
+      "path": "../translatorapp.DomainLayer/translatorapp.DomainLayer.csproj",
+      "msbuildProject": "../translatorapp.DomainLayer/translatorapp.DomainLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "translatorapp.DomainLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12099,7 +12115,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "c:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj": {
+              "projectPath": "c:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

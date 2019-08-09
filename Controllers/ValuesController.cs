@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace WebApi.Controllers
 {
@@ -19,10 +20,36 @@ namespace WebApi.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<string> GetDomainLogic(int id)
         {
-            return "value";
+            var instance = new translatorapp.DomainLayer.TranslatorLogic();
+         
+            var languages = instance.GetLanguages();
+
+            // var entries = languages.Select(d =>
+            //  string.Format("\"{0}\": {1}", d.LanguageCode, string.Join(",", d.Language)));
+            
+            // var jsonEntries = "langs:{" + string.Join(",", entries) + "}";
+
+            var entries = languages.Select(d =>
+             string.Format("{0}: \"{1}\"", d.LanguageCode, string.Join(",", d.Language)));
+            
+            var jsonEntries = "{" + string.Join(", ", entries) + "}";
+
+          //  var jsonTest = JsonConvert.SerializeObject(languages);
+            return new JsonResult(jsonEntries);
+         //   return JsonConvert.SerializeObject(languages, Formatting.None, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.None, ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+           // return "value";
         }
+
+        // GET api/values/5
+        // [HttpGet("{id}")]
+        // public ActionResult<string> Get(int id)
+        // {
+        //     // var instance = new translatorapp.DomainLayer.TranslatorLogic();
+        //     // return instance.GetNumber();
+        //     return "value";
+        // }
 
         // POST api/values
         [HttpPost]
