@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using translatorapp.DomainLayer.Interfaces;
+using translatorapp.DomainLayer.Classes;
 
 namespace WebApi
 {
@@ -27,6 +29,9 @@ namespace WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
+
+           // services.AddTransient<ITranslatorLogic, TranslatorLogic>();
+            services.Add(new ServiceDescriptor(typeof(ITranslatorLogic), new TranslatorLogic()));   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

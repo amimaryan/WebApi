@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using translatorapp.DomainLayer.Interfaces;
 
 namespace WebApi.Controllers
 {
@@ -7,16 +8,19 @@ namespace WebApi.Controllers
     [ApiController]
     public class LanguageController : ControllerBase
     {
+        ITranslatorLogic _translatorLogic;
+
+        public LanguageController(ITranslatorLogic translatorLogic)
+        {
+            _translatorLogic = translatorLogic;
+        }
+
         // GET api/language/getlanguages
         [HttpGet]
         [Route("getlanguages")]
         public ActionResult<string> GetLanguages()
         { 
-            //TO-DO: Add Unity Container for Loosely Coupled Code.
-            var instance = new translatorapp.DomainLayer.TranslatorLogic();
-            var languages = instance.GetLanguages();
-            //TO-DO: Add Unity Container for Loosely Coupled Code.
-
+            var languages = _translatorLogic.GetLanguages();
             var entries = languages.Select(d => string.Format("\"{0}\": \"{1}\"", d.LanguageCode, string.Join(",", d.Language)));      
             var jsonEntries = "{" + string.Join(", ", entries) + "}";
             return (jsonEntries);

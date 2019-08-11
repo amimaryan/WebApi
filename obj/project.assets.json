@@ -12067,11 +12067,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Aret\\Projects\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Aret\\Projects\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "c:\\Users\\Aret\\Projects\\WebApi\\WebApi.csproj",
+      "projectPath": "C:\\Users\\Aret\\Projects\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\Aret\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Aret\\Projects\\WebApi\\obj\\",
+      "outputPath": "C:\\Users\\Aret\\Projects\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
