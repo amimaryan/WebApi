@@ -4438,16 +4438,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
-      },
-      "translatorapp.DomainLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/translatorapp.DomainLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/translatorapp.DomainLayer.dll": {}
-        }
       }
     }
   },
@@ -12044,20 +12034,15 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
-    },
-    "translatorapp.DomainLayer/1.0.0": {
-      "type": "project",
-      "path": "../translatorapp.DomainLayer/translatorapp.DomainLayer.csproj",
-      "msbuildProject": "../translatorapp.DomainLayer/translatorapp.DomainLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "C:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "System.Net.Http >= 4.3.4",
-      "translatorapp.DomainLayer >= 1.0.0"
+      "System.Net.Http >= 4.3.4"
     ]
   },
   "packageFolders": {
@@ -12067,29 +12052,31 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Aret\\Projects\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Aret\\Projects\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "c:\\Users\\Aret\\Projects\\WebApi\\WebApi.csproj",
+      "projectPath": "C:\\Users\\Aret\\Projects\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\Aret\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Aret\\Projects\\WebApi\\obj\\",
+      "outputPath": "C:\\Users\\Aret\\Projects\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Aret\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Aret\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "c:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj": {
-              "projectPath": "c:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj"
+            "C:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj": {
+              "projectPath": "C:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj"
             }
           }
         }
@@ -12126,11 +12113,28 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.115\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so please run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\Aret\\Projects\\translatorapp.DomainLayer\\translatorapp.DomainLayer.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    }
+  ]
 }
