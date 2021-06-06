@@ -13,6 +13,8 @@ using Microsoft.Extensions.Options;
 using translatorapp.DomainLayer.Interfaces;
 using translatorapp.DomainLayer.Classes;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using WebApi.Data;
 
 namespace WebApi
 {
@@ -28,11 +30,13 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<UserContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectoin")));
+
             services.AddControllers();
             services.AddCors();
 
            // services.AddTransient<ITranslatorLogic, TranslatorLogic>();
-            services.Add(new ServiceDescriptor(typeof(ITranslatorLogic), new TranslatorLogic()));   
+            //services.Add(new ServiceDescriptor(typeof(ITranslatorLogic), new TranslatorLogic()));   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
