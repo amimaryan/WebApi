@@ -35,8 +35,10 @@ namespace WebApi
             services.AddControllers();
             services.AddCors();
 
-           // services.AddTransient<ITranslatorLogic, TranslatorLogic>();
-            //services.Add(new ServiceDescriptor(typeof(ITranslatorLogic), new TranslatorLogic()));   
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddTransient<ITranslatorLogic, TranslatorLogic>();
+            services.Add(new ServiceDescriptor(typeof(ITranslatorLogic), new TranslatorLogic()));   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
