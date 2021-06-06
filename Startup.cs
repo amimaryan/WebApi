@@ -15,6 +15,7 @@ using translatorapp.DomainLayer.Classes;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Data;
+using WebApi.Helpers;
 
 namespace WebApi
 {
@@ -36,6 +37,7 @@ namespace WebApi
             services.AddCors();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<JwtService>();
 
             services.AddTransient<ITranslatorLogic, TranslatorLogic>();
             services.Add(new ServiceDescriptor(typeof(ITranslatorLogic), new TranslatorLogic()));   
@@ -53,9 +55,14 @@ namespace WebApi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            
-            app.UseCors(builder =>
-                builder.WithOrigins("http://localhost:8080"));
+
+            app.UseCors(options => options
+                .WithOrigins("http://localhost:8080")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials() //Allow cookies to be sent to front-end
+            );
+
 
             app.UseHttpsRedirection();
 
